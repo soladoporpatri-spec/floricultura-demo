@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /floricultura-demo/
+
+Sitemap: https://soladoporpatri-spec.github.io/floricultura-demo/sitemap.xml

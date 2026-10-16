@@ -1,0 +1,11 @@
+node_modules/
+.sites.local.json
+.sites-local/
+output/
+*.zip
+.DS_Store
+.env
+.env.*
+!.env.example
+*.pem
+*.key

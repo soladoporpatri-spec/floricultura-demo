@@ -1,0 +1,8 @@
+# Static hosting hint. Hosts may ignore this file; verify response headers after deployment.
+# Content-Security-Policy is set in each HTML document with JSON-LD hashes.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  X-Robots-Tag: noindex, nofollow
