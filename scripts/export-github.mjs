@@ -5,7 +5,7 @@ const root=fileURLToPath(new URL('../',import.meta.url));
 const destination=resolve(root,'output/github-source');
 await mkdir(destination,{recursive:true});
 // Export an explicit public source set, without old hosting metadata or history.
-const entries=['dist','scripts','tests','.github','README.md','package.json','.gitignore','docs/IMAGENS.md','docs/PUBLICACAO.md'];
+const entries=['dist','scripts','tests','.github','README.md','package.json','.gitignore','docs/IMAGENS.md','docs/PUBLICACAO.md','docs/VERIFICACAO.md'];
 for(const entry of entries){
   await cp(resolve(root,entry),resolve(destination,entry),{
     recursive:true,

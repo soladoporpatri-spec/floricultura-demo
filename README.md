@@ -4,6 +4,8 @@
 
 [Abrir o site](https://soladoporpatri-spec.github.io/floricultura-demo/) · [Conhecer o desenvolvedor](https://github.com/soladoporpatri-spec)
 
+[![Publicação e testes](https://github.com/soladoporpatri-spec/floricultura-demo/actions/workflows/pages.yml/badge.svg)](https://github.com/soladoporpatri-spec/floricultura-demo/actions/workflows/pages.yml)
+
 ![Composição floral que inspira a identidade visual](dist/assets/hero.webp)
 
 ## A ideia
@@ -98,6 +100,8 @@ node --test tests/*.test.mjs
 Com a prévia rodando, outro terminal pode executar `node scripts/http-check.mjs` para conferir as respostas das páginas e dos recursos.
 
 O checker verifica sintaxe e consistência; ele não é ESLint. Os testes cobrem cálculos, frete, quantidades, variantes, entradas inválidas, checkout, traduções, rotas e caminhos do GitHub Pages. Lighthouse, Core Web Vitals e desempenho sob carga não foram medidos.
+
+A migração para o GitHub Pages passou em 27 testes. A verificação do site público conferiu 48 páginas, duas rotas de erro e 20 recursos. Consulte [o registro de verificação](docs/VERIFICACAO.md).
 
 ## Arquivos principais
 
