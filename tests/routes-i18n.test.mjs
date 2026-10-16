@@ -101,7 +101,7 @@ test('static build emits localized SEO, corresponding alternates and a safe demo
   const en = await read('en/collection/index.html');
   assert.match(en, /<html lang="en">/);
   assert.match(en, /<title>The collection[^<]*Floricultura<\/title>/);
-  assert.match(en, /<meta name="description" content="Explore the Floricultura demo collection/);
+  assert.match(en, /<meta name="description" content="Explore the Floricultura collection/);
   assert.ok(en.includes(`rel="canonical" href="${siteOrigin}${P('/en/collection')}"`));
   assert.match(en, /hreflang="pt-BR" href="[^\"]+\/pt-br\/colecao"/);
   assert.match(en, /hreflang="es" href="[^\"]+\/es\/coleccion"/);

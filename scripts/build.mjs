@@ -20,7 +20,7 @@ const noscript = {
 const metadataKeys = {
   home: ['seo.homeTitle', 'seo.homeDescription'],
   shop: ['shop.title', 'seo.shopDescription'],
-  cart: ['cart.title', 'common.demo'],
+  cart: ['cart.title', 'common.demoShort'],
   checkout: ['checkout.title', 'checkout.description'],
   story: ['story.title', 'story.intro'],
   contact: ['contact.title', 'contact.description'],
@@ -99,7 +99,7 @@ ${serialized.map(value => `  <script type="application/ld+json">${value}</script
 </head>
 <body>
   <div id="app"><div class="initial-loading" role="status" aria-label="${escape(translate(locale, 'common.loading'))}"><span class="initial-mark" aria-hidden="true">F</span><span>${escape(translate(locale, 'common.loading'))}</span></div></div>
-  <noscript><p>${escape(noscript[locale])}</p><p>${escape(translate(locale, 'common.demo'))}</p></noscript>
+  <noscript><p>${escape(noscript[locale])}</p><p>${escape(translate(locale, 'common.demoShort'))}</p></noscript>
 </body>
 </html>
 `;

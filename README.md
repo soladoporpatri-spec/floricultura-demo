@@ -1,6 +1,6 @@
 # Floricultura | Vitrine de desenvolvimento web
 
-**Uma demonstração criada por [Patricio Paulo](https://github.com/soladoporpatri-spec) para apresentar seu trabalho a futuros clientes.**
+**Site de floricultura desenvolvido por [Patricio Paulo](https://github.com/soladoporpatri-spec), com catálogo em três idiomas e uma experiência completa de escolha de presentes.**
 
 [Abrir o site](https://soladoporpatri-spec.github.io/floricultura-demo/) · [Conhecer o desenvolvedor](https://github.com/soladoporpatri-spec)
 
@@ -10,7 +10,7 @@
 
 ## A ideia
 
-Este projeto mostra como uma floricultura pode apresentar suas composições, ajudar o visitante a escolher um presente e conduzi-lo até uma simulação de compra. A identidade combina bordô, marfim, verde profundo e fotografia botânica, com títulos grandes e uma composição editorial.
+Este projeto mostra como uma floricultura pode apresentar suas composições, ajudar o visitante a escolher um presente e conduzi-lo até a revisão do presente. A identidade combina bordô, marfim, verde profundo e fotografia botânica, com títulos grandes e uma composição editorial.
 
 O objetivo é servir como vitrine de design e desenvolvimento. **A loja é fictícia: não recebe pedidos, não cobra valores e não envia mensagens.** Produtos, preços e condições de entrega são exemplos para demonstrar a experiência.
 
@@ -24,9 +24,9 @@ Quer uma versão adaptada à sua empresa? [Conheça o trabalho de Patricio Paulo
 | Catálogo | Seis produtos, busca por nome e descrição e filtros de categoria, cor, ocasião e preço |
 | Ordenação | Seleção do catálogo, menor preço, maior preço e produtos recentes |
 | Produto | Foto ampliável, composição, descrição, tamanho, quantidade e mensagem para cartão |
-| Sacola | Adicionar e remover itens, alterar quantidades, atualizar valores e continuar a simulação |
-| Checkout | Identificação, endereço, escolha entre retirada e entrega, validação e resumo |
-| Contato | Formulário validado com confirmação local, sem envio |
+| Sacola | Adicionar e remover itens, alterar quantidades, atualizar valores e preparar o presente |
+| Checkout | Identificação, endereço, escolha entre retirada e entrega, validação e revisão do presente, preservando a sacola |
+| Contato | Formulário validado com prévia da mensagem, sem envio |
 | Institucional | Ateliê, dúvidas, entregas e cuidados, privacidade, termos e erro 404 |
 | Idiomas | Português brasileiro, inglês e espanhol em toda a interface |
 
@@ -38,6 +38,8 @@ Os produtos têm tamanhos clássico e generoso. O generoso custa 50% a mais; os 
 
 O cartão aceita até 180 caracteres. A mensagem fica na memória durante a visita e desaparece ao recarregar a página. A sacola guarda no navegador somente produto, tamanho, quantidade e um identificador de variante. Nome, e-mail, telefone, endereço e observações dos formulários não são armazenados nem enviados.
 
+O aviso de demonstração fica na faixa superior. As seções apresentam o catálogo e os serviços com textos de loja; as ações de revisão deixam claro seu resultado, sem confirmar pedidos ou mensagens que não foram enviados.
+
 ## Design e experiência
 
 - Identidade própria em bordô e marfim, com detalhes em verde e rosa.
@@ -46,7 +48,7 @@ O cartão aceita até 180 caracteres. A mensagem fica na memória durante a visi
 - Fontes locais e nenhuma dependência externa para carregar a interface.
 - Layout para celular, tablet e desktop, com menu móvel.
 - Labels de formulário, foco visível, navegação por teclado e movimento reduzido.
-- Estados de busca sem resultado, sacola vazia, erros e conclusão demonstrativa.
+- Estados de busca sem resultado, sacola vazia, erros e revisão do presente.
 
 Cada produto tem uma fotografia própria e permite ampliá-la. A galeria usa a mesma foto, sem inventar outros ângulos. Não há depoimentos, endereço ou histórico empresarial fictício apresentados como reais.
 

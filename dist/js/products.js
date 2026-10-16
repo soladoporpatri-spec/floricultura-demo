@@ -24,9 +24,9 @@ export const products = [
       es: 'Rosas en tonos suaves y follaje ligero. Belle Rose tiene la delicadeza de una nota escrita a mano.',
     },
     composition: {
-      'pt-br': 'Referência de composição: rosas em tons de rosa e folhagens. A imagem é ilustrativa.',
-      en: 'Composition reference: pink-toned roses and foliage. Image for illustration.',
-      es: 'Referencia de composición: rosas en tonos rosados y follaje. Imagen ilustrativa.',
+      'pt-br': 'Composição: rosas em tons de rosa e folhagens.',
+      en: 'Composition: pink-toned roses and foliage.',
+      es: 'Composición: rosas en tonos rosados y follaje.',
     },
   },
   {
@@ -47,9 +47,9 @@ export const products = [
       es: 'Blancos, cremas y verdes en una composición serena. Para una mesa preparada o un rincón que pide luz.',
     },
     composition: {
-      'pt-br': 'Referência de composição: flores brancas, tons de creme e folhagens, em vaso. A imagem é ilustrativa.',
-      en: 'Composition reference: white and cream flowers with foliage, in a vase. Image for illustration.',
-      es: 'Referencia de composición: flores blancas, tonos crema y follaje, en jarrón. Imagen ilustrativa.',
+      'pt-br': 'Composição: flores brancas, tons de creme e folhagens, em vaso.',
+      en: 'Composition: white and cream flowers with foliage, in a vase.',
+      es: 'Composición: flores blancas, tonos crema y follaje, en jarrón.',
     },
   },
   {
@@ -70,9 +70,9 @@ export const products = [
       es: 'Tonos vino, pétalos rosados y verdes profundos. Un arreglo para quienes disfrutan de las flores con presencia y contraste.',
     },
     composition: {
-      'pt-br': 'Referência de composição: flores em bordô e rosa, com folhagens. O nome se refere à cor; não inclui bebida. Imagem ilustrativa.',
-      en: 'Composition reference: burgundy and pink flowers with foliage. The name refers to the color; no drink is included. Illustrative image.',
-      es: 'Referencia de composición: flores burdeos y rosas con follaje. El nombre se refiere al color; no incluye bebida. Imagen ilustrativa.',
+      'pt-br': 'Composição: flores em bordô e rosa, com folhagens. O nome se refere à cor; não inclui bebida.',
+      en: 'Composition: burgundy and pink flowers with foliage. The name refers to the color; no drink is included.',
+      es: 'Composición: flores burdeos y rosas con follaje. El nombre se refiere al color; no incluye bebida.',
     },
   },
   {
@@ -93,9 +93,9 @@ export const products = [
       es: 'Amarillos cálidos y follaje fresco en un ramo de aire ligero. Un buen color para empezar el día.',
     },
     composition: {
-      'pt-br': 'Referência de composição: flores amarelas, detalhes claros e folhagens. A imagem é ilustrativa.',
-      en: 'Composition reference: yellow flowers, light accents and foliage. Image for illustration.',
-      es: 'Referencia de composición: flores amarillas, detalles claros y follaje. Imagen ilustrativa.',
+      'pt-br': 'Composição: flores amarelas, detalhes claros e folhagens.',
+      en: 'Composition: yellow flowers, light accents and foliage.',
+      es: 'Composición: flores amarillas, detalles claros y follaje.',
     },
   },
   {
@@ -116,9 +116,9 @@ export const products = [
       es: 'Flores de distintas formas, colores libres y un dibujo que recuerda a un jardín. Para traer un poco de fuera hacia dentro.',
     },
     composition: {
-      'pt-br': 'Referência de composição: flores de cores variadas e folhagens, em formato livre. A imagem é ilustrativa.',
-      en: 'Composition reference: mixed-color flowers and foliage in a free-form bouquet. Image for illustration.',
-      es: 'Referencia de composición: flores de varios colores y follaje, en un ramo de forma libre. Imagen ilustrativa.',
+      'pt-br': 'Composição: flores de cores variadas e folhagens, em formato livre.',
+      en: 'Composition: mixed-color flowers and foliage in a free-form bouquet.',
+      es: 'Composición: flores de varios colores y follaje, en un ramo de forma libre.',
     },
   },
   {
@@ -139,9 +139,9 @@ export const products = [
       es: 'Una composición floral de tamaño delicado, pensada para acompañar unas palabras y un gesto de cariño.',
     },
     composition: {
-      'pt-br': 'Referência de composição: flores rosadas em apresentação para presente. A imagem é ilustrativa; itens adicionais não estão incluídos.',
-      en: 'Composition reference: pink flowers presented as a gift. Image for illustration; additional items are not included.',
-      es: 'Referencia de composición: flores rosadas presentadas para regalo. Imagen ilustrativa; no se incluyen artículos adicionales.',
+      'pt-br': 'Composição: flores rosadas em apresentação para presente. Itens adicionais não estão incluídos.',
+      en: 'Composition: pink flowers presented as a gift. Additional items are not included.',
+      es: 'Composición: flores rosadas presentadas para regalo. No se incluyen artículos adicionales.',
     },
   },
 ];

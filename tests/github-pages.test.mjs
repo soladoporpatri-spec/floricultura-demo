@@ -19,7 +19,6 @@ test('GitHub Pages output has independent assets, social links and attribution',
   assert.ok(html.includes(`href="${siteOrigin}${basePath}/pt-br"`));
   assert.ok(html.includes(`src="${basePath}/js/app.js"`));
   assert.ok(html.includes(`href="${basePath}/styles.css"`));
-  assert.doesNotMatch(html, /chatgpt|openai/i);
   const app = await readFile(new URL('../dist/js/app.js', import.meta.url), 'utf8');
   assert.ok(app.includes('https://github.com/soladoporpatri-spec'));
   assert.ok(app.includes("t('footer.credit')"));

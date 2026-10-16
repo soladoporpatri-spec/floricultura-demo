@@ -29,7 +29,7 @@ function header(){
   const count=cartTotals(cart,products).count;
   return `<header class="site-header"><button class="icon-button mobile-toggle" aria-label="${t('nav.menu')}" aria-expanded="false" aria-controls="mobile-menu" id="menu-toggle">${icon('menu')}</button><nav class="nav-left" aria-label="${t('nav.menu')}"><a href="${url('shop')}">${t('nav.shop')}</a><a href="${url('home')}#occasions">${t('nav.occasions')}</a><a href="${url('story')}">${t('nav.story')}</a></nav><a class="wordmark" href="${url('home')}" aria-label="Floricultura · ${t('common.home')}">${icon('flower')}<span>Floricultura</span></a><div class="nav-right"><select class="locale-select" id="locale-select" aria-label="${t('nav.language')}">${Object.keys(localeInfo).map(l=>`<option value="${l}" ${l===route.locale?'selected':''} lang="${localeInfo[l].lang}" title="${localeInfo[l].label}">${l==='pt-br'?'PT':l.toUpperCase()}</option>`).join('')}</select><a class="icon-button search-link" href="${url('shop')}?search=" aria-label="${t('nav.search')}">${icon('search')}</a><a class="icon-button cart-link" href="${url('cart')}" aria-label="${t('nav.cart')} (${count})">${icon('bag')}<span class="cart-label">${t('nav.cart')}</span><span class="cart-count" aria-hidden="true">${count}</span></a></div><nav class="mobile-menu" id="mobile-menu" hidden aria-label="${t('nav.menu')}">${['shop','story','contact','faq'].map(k=>`<a href="${url(k)}">${t(`nav.${k}`)}</a>`).join('')}<a href="${url('home')}#occasions">${t('nav.occasions')}</a></nav></header>`;
 }
-function footer(){return `<footer class="site-footer"><div class="footer-main"><div class="footer-brand"><a class="wordmark" href="${url('home')}">${icon('flower')}Floricultura</a><p>${t('footer.tagline')}</p></div><div class="footer-col"><h3>${t('footer.explore')}</h3><a href="${url('shop')}">${t('nav.shop')}</a><a href="${url('shop')}?category=bouquets">${t('category.bouquets')}</a><a href="${url('shop')}?category=arrangements">${t('category.arrangements')}</a><a href="${url('shop')}?category=gifts">${t('category.gifts')}</a><a href="${url('story')}">${t('nav.story')}</a></div><div class="footer-col"><h3>${t('footer.help')}</h3><a href="${url('contact')}">${t('nav.contact')}</a><a href="${url('faq')}">${t('nav.faq')}</a><a href="${url('policies')}">${t('footer.deliveries')}</a><a href="${url('privacy')}">${t('footer.privacy')}</a><a href="${url('terms')}">${t('footer.terms')}</a></div></div><p class="footer-demo">${t('footer.note')}</p><p class="footer-credit">${t('footer.credit')} <a href="https://github.com/soladoporpatri-spec" target="_blank" rel="noopener noreferrer" aria-label="GitHub · Patricio Paulo">GitHub ${icon('arrow')}</a></p><div class="footer-bottom"><p>© ${new Intl.DateTimeFormat(localeInfo[route.locale].locale,{year:'numeric',timeZone:'America/Sao_Paulo'}).format(new Date())} Floricultura. ${t('footer.rights')}</p><p>${t('common.demoShort')} · BRL</p></div></footer>`;}
+function footer(){return `<footer class="site-footer"><div class="footer-main"><div class="footer-brand"><a class="wordmark" href="${url('home')}">${icon('flower')}Floricultura</a><p>${t('footer.tagline')}</p></div><div class="footer-col"><h3>${t('footer.explore')}</h3><a href="${url('shop')}">${t('nav.shop')}</a><a href="${url('shop')}?category=bouquets">${t('category.bouquets')}</a><a href="${url('shop')}?category=arrangements">${t('category.arrangements')}</a><a href="${url('shop')}?category=gifts">${t('category.gifts')}</a><a href="${url('story')}">${t('nav.story')}</a></div><div class="footer-col"><h3>${t('footer.help')}</h3><a href="${url('contact')}">${t('nav.contact')}</a><a href="${url('faq')}">${t('nav.faq')}</a><a href="${url('policies')}">${t('footer.deliveries')}</a><a href="${url('privacy')}">${t('footer.privacy')}</a><a href="${url('terms')}">${t('footer.terms')}</a></div></div><p class="footer-credit">${t('footer.credit')} <a href="https://github.com/soladoporpatri-spec" target="_blank" rel="noopener noreferrer" aria-label="GitHub · Patricio Paulo">GitHub ${icon('arrow')}</a></p><div class="footer-bottom"><p>© ${new Intl.DateTimeFormat(localeInfo[route.locale].locale,{year:'numeric',timeZone:'America/Sao_Paulo'}).format(new Date())} Floricultura. ${t('footer.rights')}</p><p>BRL</p></div></footer>`;}
 function updateMetadata(){
   document.documentElement.lang=localeInfo[route.locale].lang;
   const p=products.find(p=>p.id===route.id);
@@ -54,11 +54,11 @@ function updateMetadata(){
   document.querySelectorAll('script[type="application/ld+json"]').forEach((script,index)=>{if(index>0)script.remove();});
   if(structured)structured.textContent=JSON.stringify(route.key==='product'&&p?{'@context':'https://schema.org','@type':'Product',name:p.name,description:p.description[route.locale],image:origin+assetUrl(p.image),sku:p.id,brand:{'@type':'Brand',name:'Floricultura'}}:{'@context':'https://schema.org','@type':'Organization',name:'Floricultura',url:siteUrl});
 }
-function render({focus=false,success=false}={}){
+function render({focus=false,success=false,delivery='pickup'}={}){
   try {
     const c=context();
     let content;
-    if(success)content=renderSuccess(c);
+    if(success)content=renderSuccess(c,delivery);
     else if(route.key==='home')content=renderHome(c);
     else if(route.key==='shop')content=renderShop(c);
     else if(route.key==='product'){
@@ -67,7 +67,7 @@ function render({focus=false,success=false}={}){
     }else if(route.key==='cart')content=renderCart(c);
     else if(route.key==='checkout')content=renderCheckout(c);
     else content=renderInstitutional(route.key,c);
-    app.innerHTML=`<a href="#main-content" class="skip-link">${t('common.skip')}</a><div class="site-announcement">${t('common.demoShort')} &nbsp; ${icon('flower')} &nbsp; ${t('hero.side')}</div>${route.key==='home'&&!success?'':`<div class="header-wrap">${header()}</div>`}<main id="main-content">${content}</main>${footer()}<div id="toast" class="toast" role="status" aria-live="polite"></div>`;
+    app.innerHTML=`<a href="#main-content" class="skip-link">${t('common.skip')}</a><div class="site-announcement">${t('common.demoShort')}</div>${route.key==='home'&&!success?'':`<div class="header-wrap">${header()}</div>`}<main id="main-content">${content}</main>${footer()}<div id="toast" class="toast" role="status" aria-live="polite"></div>`;
     updateMetadata();
     if(route.key==='shop'){hydrateFilters();updateCatalog();}
     if(route.key==='product'&&document.getElementById('gift-message')){document.getElementById('gift-message').value=productMessage;document.getElementById('message-count').textContent=`${productMessage.length} / 180`;}
@@ -188,12 +188,14 @@ app.addEventListener('submit',event=>{
   if(form.id==='checkout-form'){
     const errors=validateCheckout(values);if(!values.consent)errors.consent='consent';
     showErrors(form,errors);if(Object.keys(errors).length)return;
-    cart=[];persistCart();productMessage='';render({success:true,focus:true});window.scrollTo({top:0,behavior:'instant'});
+    render({success:true,focus:true,delivery:values.delivery});window.scrollTo({top:0,behavior:'instant'});
   }
   if(form.id==='contact-form'){
     const errors={};if(!values.name.trim())errors.name='required';if(!values.email.trim())errors.email='required';else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email))errors.email='email';if(!values.message.trim())errors.message='required';
     showErrors(form,errors);if(Object.keys(errors).length)return;
-    form.reset();form.hidden=true;document.getElementById('contact-success').hidden=false;
+    const preview=document.getElementById('contact-success');
+    document.getElementById('contact-preview').textContent=[values.name,values.email,values.subject,values.message].filter(Boolean).join('\n\n');
+    preview.hidden=false;preview.focus();
   }
 });
 app.addEventListener('error',event=>{

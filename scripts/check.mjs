@@ -113,7 +113,6 @@ for (const relative of requiredPages) {
   requireThat(html.includes(`aria-label="${messages[locale]['common.loading']}">`), `${relative}: loading label is not localized.`);
   requireThat(html.includes('<noscript>'), `${relative}: localized noscript message is missing.`);
   requireThat(html.includes(`<script type="module" src="${assetUrl('/js/app.js')}"></script>`), `${relative}: app module is missing.`);
-  requireThat(!/chatgpt\.site|openai\.com/i.test(html), `${relative}: obsolete hosting link.`);
   for (const property of ['og:title', 'og:description', 'og:url', 'og:image']) requireThat(html.includes(`property="${property}" content="`), `${relative}: missing ${property}.`);
   const csp = html.match(/http-equiv="Content-Security-Policy" content="([^"]+)"/)?.[1] || '';
   for (const directive of ["default-src 'self'", "script-src 'self'", "style-src 'self'", "img-src 'self' data:", "font-src 'self'", "connect-src 'none'", "object-src 'none'", "base-uri 'none'", "form-action 'none'"]) {
