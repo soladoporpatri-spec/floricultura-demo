@@ -209,7 +209,7 @@ window.addEventListener('storage',event=>{
   if(event.key!==CART_KEY)return;
   cart=sanitizeCart(event.newValue,products);
   if(route.key==='cart'||(route.key==='checkout'&&!cart.length))render();
-  else if(route.key==='checkout'){const delivery=document.querySelector('[name="delivery"]:checked')?.value||'pickup';document.getElementById('checkout-summary').innerHTML=summary(context(),delivery,true);refreshCartCount();}
+  else if(route.key==='checkout'){const delivery=document.querySelector('[name="delivery"]:checked')?.value||document.getElementById('checkout-summary')?.dataset.delivery||'pickup';document.getElementById('checkout-summary').innerHTML=summary(context(),delivery,true);refreshCartCount();}
   else refreshCartCount();
   showToast(translate(route.locale,'common.storageSync'));
 });

@@ -32,6 +32,8 @@ test('gift review includes the selected delivery total and a route back to the p
     const local=renderSuccess(c,'local');
     const pickup=renderSuccess(c,'pickup');
     assert.ok(local.includes(c.money(27400)));
+    assert.match(local,/id="checkout-summary" data-delivery="local"/);
+    assert.match(pickup,/id="checkout-summary" data-delivery="pickup"/);
     assert.ok(pickup.includes(c.money(24900)));
     assert.ok(local.includes(c.url('cart')));
     assert.ok(local.includes(escapeHtml(translate(locale,'checkout.successText'))));
